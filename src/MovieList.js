@@ -5,7 +5,21 @@ function MovieList(props) {
     return (
         <ul>
             {
-                props.movies.map((movie, i) => <li key={i}>{movie}</li>)
+                // You can only use implicit return if you have one expression to the right 
+                // of the arrow 
+                props.movies.map((movie, i) => 
+                (<li key={i}>
+                    <a 
+                    href="#"
+                    onClick={() =>{
+                        props.handleClick(movie);
+                    }}
+                >   
+                    {movie}</a>
+                
+                 </li>
+                    
+                ))
             }
         </ul>
     );
